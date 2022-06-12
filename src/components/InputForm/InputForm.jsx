@@ -16,11 +16,7 @@ const InputForm = (props) => {
     }
   }
 
-  const btnSubmit = document.querySelector('.ButtonCustom');
-  btnSubmit.addEventListener('click', () => {
-    // if (isEmpty) {
-    // }
-  })
+
 
   const { type, title } = props;
   const handleType = (type) => { type = type ? type : "text"; return type }
