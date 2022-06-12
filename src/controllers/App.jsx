@@ -14,21 +14,28 @@ function App() {
 
   const { isAuthenticated } = useContext(authContext);
 
-  const location = useLocation();
+
 
   return (
     <div className="App">
       <MoviesContext>
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/Login" exact element={<LoginPage />} />
-            <Route path="/SignUp" exact element={<SignUpPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Router>
+        <Router>{
+          isAuthenticated ? (
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          ) : (
+            <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          )
+        }</Router>
       </MoviesContext>
-    </div >
+    </div>
   );
 }
 

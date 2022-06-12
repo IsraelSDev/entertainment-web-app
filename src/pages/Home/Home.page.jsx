@@ -6,9 +6,7 @@ import { moviesContext } from '../../context/moviesContext';
 
 const HomePage = () => {
 
-  const location = useLocation();
 
-  
   const fetchMovies = async () => {
     const response = await axios
       .get(`https://isstudio-movies-api.herokuapp.com/movies`)
