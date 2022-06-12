@@ -12,7 +12,7 @@ const InputForm = (props) => {
 
   return (
     <div className={'InputForm'}>
-      <input type={handleType(type)} placeholder={handleTitle(title)} />
+      <input type={handleType(type)} autoComplete={type} placeholder={handleTitle(title)} />
     </div>
   );
 }

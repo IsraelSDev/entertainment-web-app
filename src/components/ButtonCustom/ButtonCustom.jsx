@@ -7,7 +7,7 @@ const ButtonCustom = (props) => {
 
   return (
     <div className='ButtonCustomContainer'>
-      <button className={'ButtonCustom'}>{btnTitle ? "" : "Login to your account"}</button>
+      <button className={'ButtonCustom'}>{btnTitle ? `${btnTitle} to your account` : "Login to your account"}</button>
     </div>
   );
 }
