@@ -1,7 +1,7 @@
 import "./App.sass";
 
-import React, { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { MoviesContext } from "../context/moviesContext";
 import { authContext } from "..//context/authenticatorContext";
 
@@ -14,26 +14,37 @@ function App() {
 
   const { isAuthenticated } = useContext(authContext);
 
+  useEffect(() => {
+    if (!isAuthenticated) {
+      <Navigate to="/login" />
+    } else if (isAuthenticated) {
+      <Navigate to="/home" />
+    }
+  }, [isAuthenticated]);
+
   return (
     <div className="App">
       <MoviesContext>
-        <Router>{
-          isAuthenticated ? (
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          ) : (
-            <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignUpPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          )
-        }</Router>
-      </MoviesContext>
-    </div>
+        <Router>
+          {
+            isAuthenticated ? (
+              <Routes>
+                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/home" element={<HomePage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            ) : (
+              <Routes>
+                <Route path="/" element={<Navigate to="/login" />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignUpPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            )
+          }
+        </Router>
+      </MoviesContext >
+    </div >
   );
 }
 
