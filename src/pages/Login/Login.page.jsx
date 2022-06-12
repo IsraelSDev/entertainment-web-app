@@ -4,7 +4,7 @@ import Form from '../../components/Form/Form.jsx';
 const LoginPage = () => {
   return (
     <div>
-      <Form />
+      <Form title="Login" option="Don't" optionEvent="Sign Up" to="signup" />
     </div>
   );
 }

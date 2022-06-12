@@ -1,14 +1,40 @@
-.form-container
+.Form
+  height: 100vh
   width: 100%
   max-width: 500px
   margin: 0 auto
   padding: 20px
-  border-radius: 5px
   display: flex
-  height: 100vh
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  border-radius: 5px
+
+  img
+    width: 32px
+    height: 32px
+    position: absolute
+    top: 15%
+
   form
     background-color: var(--color-dark-blue)
     padding: 20px
     border-radius: 5px
     align-self: center
     margin: 0 auto
+    h1
+      color: var(--color-white)
+      font: var(--font-heading-large)
+      background-color: var(--color-dark-blue)
+      padding: 20px
+    h6
+      color: var(--color-white)
+      font: var(--font-body-small)
+      padding: 10px
+      text-align: center
+
+      span
+        margin-left: 10px
+        a
+          color: var(--color-red)
+          text-decoration: none
