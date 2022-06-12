@@ -14,8 +14,6 @@ function App() {
 
   const { isAuthenticated } = useContext(authContext);
 
-
-
   return (
     <div className="App">
       <MoviesContext>

@@ -23,18 +23,21 @@
       border-bottom: 2px solid var(--color-white)
   input:-internal-autofill-selected
     background-color: var(--color-dark-blue) !important
-.Error
+
+.error
+  font: var(--font-body-small)
+  color: var(--color-red)
+  width: 90%
+  text-align: right
+  position: relative
+  z-index: 1
   input
     border-bottom: 2px solid var(--color-red)
-  &::after
-    content: "Can't be empty"
-    font: var(--font-body-small)
+  span
+    position: absolute
+    top: 30px
+    right: -15px
     color: var(--color-red)
-    position: relative
-    top: 0
-    left: calc( -6%)
-    text-align: left
-    width: 100px
-    height: 100px
-    opacity: 1
-    z-index: 1
+    font: var(--font-body-small)
+.hidden
+  display: none
