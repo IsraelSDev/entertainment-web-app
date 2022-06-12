@@ -1,22 +1,34 @@
-import React from "react";
 import "./App.sass";
-import Search from "../components/Search/Search";
-import InputForm from "../components/InputForm/InputForm";
-import ButtonCustom from "../components/ButtonCustom/ButtonCustom";
+
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { MoviesContext } from "../context/moviesContext";
+import { authContext } from "..//context/authenticatorContext";
+
+import HomePage from "../pages/Home/Home.page.jsx";
+import LoginPage from "../pages/Login/Login.page";
+import SignUpPage from "../pages/SignUp/SignUp.page";
 import NotFoundPage from "../pages/NotFound/NotFound.page";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
+
+  const { isAuthenticated } = useContext(authContext);
+
+  const location = useLocation();
+
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Search />} />
-          <Route path="/" element={<InputForm />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Router>
-    </div>
+      <MoviesContext>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/Login" exact element={<LoginPage />} />
+            <Route path="/SignUp" exact element={<SignUpPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Router>
+      </MoviesContext>
+    </div >
   );
 }
 
