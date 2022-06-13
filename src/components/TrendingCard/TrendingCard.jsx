@@ -1,17 +1,17 @@
 import React from 'react';
-import "./Card.sass";
+import "./TrendingCard.sass";
 
 import SVGlist from '../../assets/SVGlist';
 import imageThumb from "../../assets/thumbnails/112/regular/large.jpg";
 
 
-const Card = (props) => {
+const TrendingCard = (props) => {
 
   return (
-    <div className='Card-container'>
-      <div className='Card-image-container'>
-        <div className='Bookmark-container'>
-          <div className='Boorkmark-wrapper'>{
+    <div className='Trending-card-container'> 
+      <div className='Trending-card-image-container'>
+        <div className='Trending-card-Bookmark-container'>
+          <div className='Trending-card-Boorkmark-wrapper'>{
             props.bookmark == "full" ? (
               SVGlist.iconBookmarkFull
             ) : (
@@ -20,9 +20,9 @@ const Card = (props) => {
           }
           </div>
         </div>
-        <img className='Card-image' src={imageThumb} alt='Card-image' />
+        <img className='Trending-card-image' src={imageThumb} alt='Card-image' />
       </div>
-      <div className='Card-info-container'>
+      <div className='Trending-card-info-container'>
 
         <p>{props.age} 2019 </p>
         <span>.</span>
@@ -31,11 +31,11 @@ const Card = (props) => {
         <p>{props.ageIndication} PG</p>
 
       </div>
-      <div className='Card-info-title'>
+      <div className='Trending-card-info-title'>
         <h1>{props.title} The Great Lands</h1>
       </div>
     </div>
   );
 }
 
-export default Card;
+export default TrendingCard;
