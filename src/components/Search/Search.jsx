@@ -10,7 +10,7 @@ const Search = () => {
   return (
     <div className='Search'>
       <img src={searchIcon} alt='search-icon' />
-      <Input defaultValue="Oie" inputProps={ariaLabel} color="secondary" />
+      <Input placeholder="Search for movies or TV series" inputProps={ariaLabel} color="secondary" />
     </div>
   );
 }

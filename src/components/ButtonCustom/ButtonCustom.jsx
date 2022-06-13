@@ -18,7 +18,7 @@ const ButtonCustom = (props) => {
           <Navigate to="/home" />
         }
       }>{btnTitle ? `${btnTitle} to your account` : "Login to your account"}</button>
-    </div>
+    </div >
   );
 }
 
