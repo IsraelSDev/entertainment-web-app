@@ -18,10 +18,11 @@ aside
       background-color: var(--color-dark-blue) !important
 
   ul
+
     list-style: none
     list-style-position: inside
     li
-      padding: 10px 0
+      padding: 30px
       a
         cursor: pointer
         color: var(--color-white)
@@ -29,7 +30,11 @@ aside
         font-size: var(--font-heading-medium)
         font-weight: 500
         &:hover
-          background-color: var(--color-white)
+          transition: 2s ease-in-out
+          svg
+            path
+              fill: var(--color-red)
+
   .profile
     display: flex
     height: 40%
@@ -43,3 +48,7 @@ aside
         border: 2px solid var(--color-white)
         border-radius: 50%
         padding: 0
+.active
+  fill: var(--color-white)
+  path
+    fill: var(--color-white)

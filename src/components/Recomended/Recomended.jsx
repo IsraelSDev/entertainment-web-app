@@ -6,7 +6,7 @@ const Recomended = () => {
   return (
     <div>
       <h1>Recomended</h1>
-      <Card />
+      <Card bookmark="" />
     </div>
   );
 }
