@@ -1,12 +1,17 @@
 .nav-bar-container
   display: flex
   width: 10%
+
 aside
   background-color: var(--color-dark-blue)
   margin: 20px
   width: 100%
   height: 90vh
   border-radius: 30px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
   .nav-bar-elements
     padding: 20px
     text-align: center
@@ -14,9 +19,9 @@ aside
       background-color: var(--color-dark-blue) !important
     .icon-movie
       svg
-        margin: 20px 0
+        margin: 15px 0
   ul
-
+    padding: 40px 0
     list-style: none
     list-style-position: inside
     li
@@ -34,18 +39,20 @@ aside
               fill: var(--color-red)
 
   .profile
-    display: flex
-    height: 40%
-    padding: 0
+    width: 100%
+    text-align: center
+    padding: 20px 0
     .profile-box
-      align-self: self-end
-      margin: 0 auto
+      height: 40%
+      display: flex
       padding: 0
-      margin-bottom: 20px
+
       img
+        width: 80px
+        height: 80px
+        margin: 0 auto
         border: 2px solid var(--color-white)
         border-radius: 50%
-        padding: 0
 .active
   fill: var(--color-white)
   path

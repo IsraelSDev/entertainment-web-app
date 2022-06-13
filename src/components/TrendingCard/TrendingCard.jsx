@@ -8,7 +8,7 @@ import imageThumb from "../../assets/thumbnails/112/regular/large.jpg";
 const TrendingCard = (props) => {
 
   return (
-    <div className='Trending-card-container'> 
+    <div className='Trending-card-container'>
       <div className='Trending-card-image-container'>
         <div className='Trending-card-Bookmark-container'>
           <div className='Trending-card-Boorkmark-wrapper'>{
