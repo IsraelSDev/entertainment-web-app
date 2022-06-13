@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 
 const Recomended = () => {
   return (
-    <div>
+    <div className='recomended-container'>
       <Card bookmark="" />
     </div>
   );

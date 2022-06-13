@@ -23,17 +23,17 @@ const TrendingCard = (props) => {
         <img className='Trending-card-image' src={imageThumb} alt='Card-image' />
       </div>
       <div className='Trending-card-info-container'>
-
+        {/* 
         <p>{props.age} 2019 </p>
         <span>.</span>
         <p> <img src="" alt="icon" />{props.type} Movie</p>
         <span>.</span>
-        <p>{props.ageIndication} PG</p>
+        <p>{props.ageIndication} PG</p> */}
 
       </div>
-      <div className='Trending-card-info-title'>
+      {/* <div className='Trending-card-info-title'>
         <h1>{props.title} The Great Lands</h1>
-      </div>
+      </div> */}
     </div>
   );
 }

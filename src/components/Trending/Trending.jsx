@@ -12,10 +12,16 @@ const Trending = () => {
           <TrendingCard />
           <TrendingCard />
           <TrendingCard />
+          <TrendingCard />
+          <TrendingCard />
+          <TrendingCard />
         </div>
-        <h1>Recommended for you</h1>
         <br />
+        <h1>Recommended for you</h1>
         <div className='Trending-recomended-container'>
+          <Recomended />
+          <Recomended />
+          <Recomended />
           <Recomended />
           <Recomended />
           <Recomended />
