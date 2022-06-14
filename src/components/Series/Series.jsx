@@ -1,45 +1,20 @@
 import React from 'react';
 import Card from '../../components/Card/Card';
 
-const Series = () => {
+const Series = (props) => {
+
+
+
   return (<>
     <div>
       <h1>Series</h1>
     </div>
     <div className='movies-container'>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
-      <div className='movies-wrapper'>
-        <Card />
-      </div>
+      {props.movies.map(movie => (
+        <div className='movies-wrapper'>
+          <Card key={movie.id} movie={movie} />
+        </div>
+      ))}
     </div>
   </>);
 }

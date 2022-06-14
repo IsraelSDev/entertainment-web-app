@@ -2,10 +2,12 @@ import React from 'react';
 import "./TrendingCard.sass";
 
 import SVGlist from '../../assets/SVGlist';
-import imageThumb from "../../assets/thumbnails/112/regular/large.jpg";
+import loadingImg from '../../assets/loading-buffering.gif';
 
 
 const TrendingCard = (props) => {
+
+  const { movie } = props;
 
   return (
     <div className='Trending-card-container'>
@@ -20,18 +22,10 @@ const TrendingCard = (props) => {
           }
           </div>
         </div>
-        <img className='Trending-card-image' src={imageThumb} alt='Card-image' />
-      </div>
-      <div className='Trending-card-info-container-wrapper'>
-        <div className='Trending-card-info-container'>
-          <p>{props.age} 2019 </p>
-          <span>.</span>
-          <p> <img src="" alt="icon" />{props.type} Movie</p>
-          <span>.</span>
-          <p>{props.ageIndication} PG</p>
-        </div>
-        <div className='Trending-card-info-title'>
-          <h1>{props.title} The Great Lands</h1>
+        <div className='Trending-card-image-wrapper'>
+          <div className='trending-image-box'>
+            <img className='Trending-card-image' src={movie.image ? movie.image : null} alt='Card-image' />
+          </div>
         </div>
       </div>
     </div>

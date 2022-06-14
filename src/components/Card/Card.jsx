@@ -7,6 +7,9 @@ import imageThumb from "../../assets/thumbnails/112/regular/large.jpg";
 
 const Card = (props) => {
 
+
+  const { movie } = props;
+
   return (
     <div className='Card-container'>
       <div className='Card-image-container'>
@@ -20,19 +23,19 @@ const Card = (props) => {
           }
           </div>
         </div>
-        <img className='Card-image' src={imageThumb} alt='Card-image' />
+        <img className='Card-image' src={movie.image ? movie.image : imageThumb} alt='Card-image' />
       </div>
       <div className='Card-info-container'>
 
-        <p>{props.age} 2019 </p>
+        <p>{movie.year}</p>
         <span>.</span>
-        <p> <img src="" alt="icon" />{props.type} Movie</p>
+        <p> {movie.release} </p>
         <span>.</span>
-        <p>{props.ageIndication} PG</p>
+        <p>{movie.rating}</p>
 
       </div>
       <div className='Card-info-title'>
-        <h1>{props.title} The Great Lands</h1>
+        <h1>{movie.title}</h1>
       </div>
     </div>
   );

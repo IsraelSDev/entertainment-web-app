@@ -5,10 +5,17 @@
     width: 100%
     margin-right: 30px
     margin-bottom: 10px
+    .Trending-card-image-wrapper
+      width: 100%
+      .trending-image-box
+        width: 100%
+        max-width: 470px
+        width: 100%
+
     .Trending-card-image
-      width: 470px
       border-radius: 10px
-      height: 250px
+      height: 300px
+      width: 200px
 
   .Trending-card-Bookmark-container
     width: 100%
@@ -19,36 +26,20 @@
       border-radius: 50%
       background-color: rgba(0, 0, 0, 0.5)
       position: relative
+      display: flex
       z-index: 1
-      left: 410px
-      top: 60px
+      left: 10px
+      top: 50px
       padding: 8px
       width: 40px
+      height: 40px
       text-align: center
+      svg
+        align-self: center
+        margin: auto
 
       &:hover
         background-color: var(--color-white)
         svg
           path
             stroke: #000
-  .Trending-card-info-container-wrapper
-    position: relative
-    height: 0
-    .Trending-card-info-container, .Trending-card-info-title
-      display: flex
-      position: relative
-      top: -80px
-      left: 30px
-      p
-        font: var(--font-body-tiny)
-        opacity: 0.8
-        margin: 5px
-      span
-        font: var(--font-body-small)
-        opacity: 0.8
-        margin: 0 1px
-        font-size: 1rem
-    .Trending-card-info-title
-      h1
-        font: var(--font-heading-tiny)
-        background-color: transparent
