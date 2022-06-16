@@ -11,6 +11,7 @@ const Form = (props) => {
   const { type } = props;
 
   return (
+
     <div className='Form'>
       <img src={movieSVG} alt='movie-logo' />
       <div className='form-container'>
