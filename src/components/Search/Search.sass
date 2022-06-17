@@ -11,22 +11,29 @@
     margin-bottom: 10px
     align-self: center
     height: 25px
+    @media screen and (max-width: 1280px)
+      margin: 2px 10px 5px 5px
+
   Input
-    line-height: 30.24px
-    font: var(--font-heading-)
-    color: var(--color-white)
-    mix-blend-mode: normal
-    opacity: 0.5
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-    caret-color: var(--color-red)
-    padding: 10px 0
-    &:focus
-      opacity: 1
-    &::placeholder
-      font: var(--font-heading-medium)
+      line-height: 30.24px
+      font: var(--font-heading-)
+      color: var(--color-white)
+      mix-blend-mode: normal
+      opacity: 0.5
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+      caret-color: var(--color-red)
+      padding: 10px 0
+      &:focus
+        opacity: 1
+      &::placeholder
+        font: var(--font-heading-medium)
+
 .css-14exw6z-MuiInputBase-root-MuiInput-root:after
   border-bottom: 2px solid var(--color-greyish-blue) !important
 .css-14exw6z-MuiInputBase-root-MuiInput-root
   width: 100%
   &::before
     border: 0 !important
+@media screen and (max-width: 1280px)
+  .css-19zgyc
+    width: 100%
