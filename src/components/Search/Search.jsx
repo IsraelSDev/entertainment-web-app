@@ -16,24 +16,26 @@ const Search = () => {
   const { section } = useContext(sectionContext);
   const { favoriteMovie, handlefavoriteMovie } = useContext(favoriteContext);
 
-  const [unFilteredMovies, setUnFilteredMovies] = useState([...movies]);
-  const [unFilteredFavoriteMovies, setUnFilteredFavoriteMovies] = useState([...favoriteMovie]);
+  const [unFilteredMovies, setUnFilteredMovies] = useState([]);
+  const [unFilteredFavoriteMovies, setUnFilteredFavoriteMovies] = useState([]);
+
+  useEffect(() => {
+    setUnFilteredMovies([...movies]);
+    setUnFilteredFavoriteMovies([...favoriteMovie]);
+  }, []);
 
   const handleSearch = (e) => {
     const search = e.target.value;
 
     if (section === 'Bookmarked') {
-      console.log('Bookmarked');
-      const filteredMovies = unFilteredFavoriteMovies.filter(item => item.title.toString().toLowerCase().includes(search.toLowerCase()));
-      search === '' ? handlefavoriteMovie(unFilteredFavoriteMovies) : handlefavoriteMovie(filteredMovies);
+      const filteredFavoriteMovies = unFilteredFavoriteMovies.filter(item => item.title.toString().toLowerCase().includes(search.toLowerCase()));
+      search === '' ? handlefavoriteMovie(unFilteredFavoriteMovies) : handlefavoriteMovie(filteredFavoriteMovies);
     } else {
-      console.log('Not Bookmarked');
       const filteredMovies = unFilteredMovies.filter(item => item.title.toString().toLowerCase().includes(search.toLowerCase()));
       search === '' ? setMovies(unFilteredMovies) : setMovies(filteredMovies);
     }
 
   }
-
 
   return (
     <div className='Search'>
