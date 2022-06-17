@@ -2,6 +2,7 @@
   display: flex
   width: 10%
   position: fixed
+
 aside
   background-color: var(--color-dark-blue)
   margin: 20px
@@ -57,3 +58,26 @@ aside
   fill: var(--color-white)
   path
     fill: var(--color-white)
+
+@media screen and (max-width: 1280px)
+  .nav-bar-container
+    width: 100%
+    z-index: 2
+  aside
+    width: 100%
+    height: 100px
+    flex-direction: row
+    .nav-bar-elements
+      display: flex
+      width: 100%
+      a
+        align-self: center
+        width: 30%
+    .profile
+      width: 20%
+    ul
+      display: flex
+      width: 50%
+      margin: auto
+      li
+        margin: auto
