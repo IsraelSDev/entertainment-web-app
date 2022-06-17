@@ -2,9 +2,11 @@ import "./App.sass";
 
 import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
 import { MoviesContext } from "../context/moviesContext";
 import { authContext } from "../context/authenticatorContext";
 import { SectionContext } from '../context/sectionContext';
+import { FavoriteContext } from "../context/favoriteContext";
 
 import HomePage from "../pages/Home/Home.page.jsx";
 import LoginPage from "../pages/Login/Login.page";
@@ -25,28 +27,30 @@ function App() {
 
   return (
     <div className="App">
-      <MoviesContext>
-        <SectionContext>
-          <Router>
-            {
-              isAuthenticated ? (
-                <Routes>
-                  <Route path="/" element={<Navigate to="/home" />} />
-                  <Route path="/home" element={<HomePage />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-              ) : (
-                <Routes>
-                  <Route path="/" element={<Navigate to="/login" />} />
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/signup" element={<SignUpPage />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-              )
-            }
-          </Router>
-        </SectionContext>
-      </MoviesContext >
+      <FavoriteContext>
+        <MoviesContext>
+          <SectionContext>
+            <Router>
+              {
+                isAuthenticated ? (
+                  <Routes>
+                    <Route path="/" element={<Navigate to="/home" />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Routes>
+                ) : (
+                  <Routes>
+                    <Route path="/" element={<Navigate to="/login" />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/signup" element={<SignUpPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Routes>
+                )
+              }
+            </Router>
+          </SectionContext>
+        </MoviesContext >
+      </FavoriteContext>
     </div >
   );
 }

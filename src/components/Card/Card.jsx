@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Card.sass";
 
 import SVGlist from '../../assets/SVGlist';
 import imageThumb from "../../assets/thumbnails/112/regular/large.jpg";
-
+import { favoriteContext } from '../../context/favoriteContext'
 
 const Card = (props) => {
 
-
+  const favoriteMovie = useContext(favoriteContext);
   const { movie } = props;
 
   return (

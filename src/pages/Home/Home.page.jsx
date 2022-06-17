@@ -28,7 +28,6 @@ const HomePage = () => {
   const fetchMovies = async () => {
     const response = await axios.request(options).then(function (response) {
       setMovies(response.data.results);
-      console.log("chamou api")
     })
       .catch((error) => {
         throw new Error(error);

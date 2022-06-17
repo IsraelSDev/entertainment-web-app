@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import "./TrendingCard.sass";
+import $ from 'jquery';
 
 import SVGlist from '../../assets/SVGlist';
 import loadingImg from '../../assets/loading-buffering.gif';
+import { favoriteContext } from '../../context/favoriteContext';
 
 
 const TrendingCard = (props) => {
 
+  const { favoriteMovie, handlefavoriteMovie } = useContext(favoriteContext);
+
   const { movie } = props;
+  const [bookmark, setBookmark] = useState(false);
+
+  const handleFavorite = (e) => {
+
+    let listOfFavorite = [...favoriteMovie];
+
+    if (!bookmark) {
+      setBookmark(!bookmark);
+      console.log("favoritando");
+      const hasOnList = listOfFavorite.find(item => item._id == movie._id)
+        ? null : listOfFavorite.push(movie);
+    } else {
+      setBookmark(!bookmark);
+      console.log("desfavoritando");
+      listOfFavorite = listOfFavorite.filter(item => item._id !== movie._id);
+    }
+
+    handlefavoriteMovie(listOfFavorite);
+    console.log(listOfFavorite);
+  }
 
   return (
     <div className='Trending-card-container'>
       <div className='Trending-card-image-container'>
-        <div className='Trending-card-Bookmark-container'>
-          <div className='Trending-card-Boorkmark-wrapper'>{
-            props.bookmark == "full" ? (
+        <div className='Trending-card-Bookmark-container' onClick={(e) => { handleFavorite(e.target) }}>
+          <div className='Trending-card-Boorkmark-wrapper' >{
+            favoriteMovie.find(item => item._id == movie._id) ? (
               SVGlist.iconBookmarkFull
             ) : (
               SVGlist.iconBookmarkEmpty
