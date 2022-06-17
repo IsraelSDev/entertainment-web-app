@@ -20,8 +20,8 @@ const HomePage = () => {
     method: 'GET',
     url: 'https://movies-app1.p.rapidapi.com/api/movies',
     headers: {
-      'X-RapidAPI-Key': '788e3095f2msh028a4dae43b039cp109bb2jsnd6fae8445de8',
-      'X-RapidAPI-Host': 'movies-app1.p.rapidapi.com'
+      'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+      'X-RapidAPI-Host': 'movies-app1.p.rapidapi.com',
     }
   };
 
