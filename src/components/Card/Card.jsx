@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import "./Card.sass";
 
 import SVGlist from '../../assets/SVGlist';
@@ -7,15 +7,32 @@ import { favoriteContext } from '../../context/favoriteContext'
 
 const Card = (props) => {
 
-  const favoriteMovie = useContext(favoriteContext);
+  const { favoriteMovie, handlefavoriteMovie } = useContext(favoriteContext);
+  const [bookmark, setBookmark] = useState(false);
   const { movie } = props;
+
+
+  const handleFavorite = (e) => {
+
+    let listOfFavorite = [...favoriteMovie];
+
+    if (!bookmark) {
+      setBookmark(!bookmark);
+      const hasOnList = listOfFavorite.find(item => item._id == movie._id)
+        ? null : listOfFavorite.push(movie);
+    } else {
+      setBookmark(!bookmark);
+      listOfFavorite = listOfFavorite.filter(item => item._id !== movie._id);
+    }
+    handlefavoriteMovie(listOfFavorite);
+  }
 
   return (
     <div className='Card-container'>
       <div className='Card-image-container'>
         <div className='Bookmark-container'>
-          <div className='Boorkmark-wrapper'>{
-            props.bookmark == "full" ? (
+          <div className='Boorkmark-wrapper' onClick={(e) => { handleFavorite(e) }}>{
+            favoriteMovie.find(item => item._id == movie._id) ? (
               SVGlist.iconBookmarkFull
             ) : (
               SVGlist.iconBookmarkEmpty
