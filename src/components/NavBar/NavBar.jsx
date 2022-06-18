@@ -35,7 +35,7 @@ const NavBar = () => {
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.trendingNavSVG}</a></li>
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.movieNavSVG}</a></li>
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.tvSeriesSVG}</a></li>
-            <li><span className='count-of-favorite'>{favoriteMovie.length}</span><a onClick={(e) => handleClick(e)}>{SVGlist.bookmarkSVG}</a></li>
+            <li><a onClick={(e) => handleClick(e)}>{SVGlist.bookmarkSVG}</a></li>
           </ul>
         </div>
         <div className="profile">
