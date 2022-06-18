@@ -5,6 +5,7 @@ import "./NavBar.sass";
 
 import SVGlist from '../../assets/SVGlist';
 import imageProfile from '../../assets/image-avatar.png';
+import { favoriteContext } from '../../context/favoriteContext';
 
 import { sectionContext } from '../../context/sectionContext';
 
@@ -12,6 +13,7 @@ import { sectionContext } from '../../context/sectionContext';
 const NavBar = () => {
 
   const { section, setSection } = useContext(sectionContext);
+  const { favoriteMovie } = useContext(favoriteContext);
 
   const handleClick = (e) => {
     setSection(e.target.id);
@@ -23,7 +25,9 @@ const NavBar = () => {
 
 
   return (
-    <div className='nav-bar-container'>
+
+
+    < div className='nav-bar-container' >
       <aside>
         <div className='nav-bar-elements'>
           <Link className='icon-movie' to='/'> {SVGlist.movieSVG} </Link>
@@ -31,7 +35,7 @@ const NavBar = () => {
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.trendingNavSVG}</a></li>
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.movieNavSVG}</a></li>
             <li><a onClick={(e) => handleClick(e)}>{SVGlist.tvSeriesSVG}</a></li>
-            <li><a onClick={(e) => handleClick(e)}>{SVGlist.bookmarkSVG}</a></li>
+            <li><span className='count-of-favorite'>{favoriteMovie.length}</span><a onClick={(e) => handleClick(e)}>{SVGlist.bookmarkSVG}</a></li>
           </ul>
         </div>
         <div className="profile">

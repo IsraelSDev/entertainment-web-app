@@ -20,17 +20,13 @@ const TrendingCard = (props) => {
 
     if (!bookmark) {
       setBookmark(!bookmark);
-      console.log("favoritando");
       const hasOnList = listOfFavorite.find(item => item._id == movie._id)
         ? null : listOfFavorite.push(movie);
     } else {
       setBookmark(!bookmark);
-      console.log("desfavoritando");
       listOfFavorite = listOfFavorite.filter(item => item._id !== movie._id);
     }
-
     handlefavoriteMovie(listOfFavorite);
-    console.log(listOfFavorite);
   }
 
   return (

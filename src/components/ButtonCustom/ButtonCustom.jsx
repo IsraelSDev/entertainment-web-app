@@ -8,8 +8,6 @@ const ButtonCustom = (props) => {
   const { isAuthenticated, setIsAuthenticated } = useContext(authContext);
   const { btnTitle } = props;
 
-  console.log(isAuthenticated);
-
   return (
     <div className='ButtonCustomContainer'>
       <button type='submit' className={'ButtonCustom'} onClick={
